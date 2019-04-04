@@ -15,7 +15,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/produtos")
 public class ProdutosResource {
-//https://blog.algaworks.com/como-criar-web-services-restful-com-spring-boot/
 
     @Autowired
     private ProdutosRepository produtosRepository;
