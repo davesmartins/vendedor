@@ -53,17 +53,17 @@
             <!-- ============================================================== -->
             <!-- Topbar header - style you can find in pages.scss -->
             <!-- ============================================================== -->
-
+         
+            
             <!--inicio Header-->
             <%@ include file = "header.jsp" %>
             <!--fim Header-->
-
-
 
             <!-- End Top Navigation -->
             <!-- ============================================================== -->
             <!-- Left Sidebar - style you can find in sidebar.scss  -->
             <!-- ============================================================== -->
+
 
             <!--inicio Menu da esquerda-->
             <%@ include file = "MenuEsquerdo.jsp" %>
@@ -75,9 +75,6 @@
             <!-- ============================================================== -->
             <!-- Page Content -->
             <!-- ============================================================== -->
-           
-
-            
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row bg-title">
@@ -90,14 +87,46 @@
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
-                    
+                                     
                     
                     <!--inicio Conteúdo-->
-                   
+
+                    <div class="wrapper fadeInDown">
+                        <div id="formContent">
+                            <!-- Tabs Titles -->
+
+                            <!-- Icon -->
+                            <div class="fadeIn first">
+                                <i class="fa fa-lock fa-fw" aria-hidden="true"></i>
+                            </div>
+                            
+                             <div>
+                                <labe><h1>Acessar conta</h1> <h6>ou fazer <a href="cadastro.jsp"> cadastro</a></h6></label>
+                            </div>
+
+                            <!-- Login Form -->
+                            <form>
+                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+                                <input type="text" id="password" class="fadeIn third" name="login" placeholder="senha">
+                                <input type="submit" class="fadeIn fourth" value="Entrar">
+                            </form>
+
+                            <!-- Remind Passowrd -->
+                            <div id="formFooter">
+                                <a class="underlineHover" href="senha.jsp">Esqueceu a senha?</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                
+                                 
                     
                     <!--fim Conteúdo-->
 
-                </div>
+                    
                 <!-- /.container-fluid -->
                 <footer class="footer text-center"> 2019 &copy; Sys-Vendas </footer>
             </div>

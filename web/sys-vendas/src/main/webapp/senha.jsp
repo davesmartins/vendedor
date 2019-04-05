@@ -53,31 +53,30 @@
             <!-- ============================================================== -->
             <!-- Topbar header - style you can find in pages.scss -->
             <!-- ============================================================== -->
-
+           
+            
+            
             <!--inicio Header-->
             <%@ include file = "header.jsp" %>
             <!--fim Header-->
-
-
-
+            
             <!-- End Top Navigation -->
             <!-- ============================================================== -->
             <!-- Left Sidebar - style you can find in sidebar.scss  -->
             <!-- ============================================================== -->
-
-            <!--inicio Menu da esquerda-->
+        
+            
+              <!--inicio Menu da esquerda-->
             <%@ include file = "MenuEsquerdo.jsp" %>
             <!--fim Menu da esquerda-->
-
+            
+            
             <!-- ============================================================== -->
             <!-- End Left Sidebar -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Page Content -->
             <!-- ============================================================== -->
-           
-
-            
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row bg-title">
@@ -91,13 +90,41 @@
                         <!-- /.col-lg-12 -->
                     </div>
                     
+                                     
                     
                     <!--inicio Conteúdo-->
-                   
+
+                    
+                    <div class="wrapper fadeInDown">
+                        <div id="formContent">
+                            <!-- Tabs Titles -->
+
+                            <!-- Icon -->
+                            <div class="fadeIn first">
+                                <i class="fa fa-plug fa-fw" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <labe><h1>Recupere sua Senha</h1></label>
+                            </div>
+                            <!-- Login Form -->
+                            <form >
+                                <label><h3>Digite sua conta / login</h3></label>
+                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Nome de acesso">
+
+                                <input type="submit" class="fadeIn fourth" value="Buscar">
+                            </form>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                
+                                 
                     
                     <!--fim Conteúdo-->
 
-                </div>
+                    
                 <!-- /.container-fluid -->
                 <footer class="footer text-center"> 2019 &copy; Sys-Vendas </footer>
             </div>

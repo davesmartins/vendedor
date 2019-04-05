@@ -35,6 +35,35 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+        <script>
+
+            function funcSenha() {
+                var senha = form1.senha.value;
+                var rep_senha = form1.rep_senha.value;
+
+
+                if (senha === "") {
+
+                    alert('Preencha o campo senha');
+                    form1.senha.focus();
+                    return false;
+                }
+
+                if (senha !== rep_senha) {
+                    alert('Senhas diferentes');
+                    form1.senha.focus();
+                    return false;
+                }
+
+
+            }
+
+
+        </script>
+
+
     </head>
 
     <body class="fix-header">
@@ -53,31 +82,29 @@
             <!-- ============================================================== -->
             <!-- Topbar header - style you can find in pages.scss -->
             <!-- ============================================================== -->
-
+          
+            
             <!--inicio Header-->
             <%@ include file = "header.jsp" %>
             <!--fim Header-->
-
-
-
+            
             <!-- End Top Navigation -->
             <!-- ============================================================== -->
             <!-- Left Sidebar - style you can find in sidebar.scss  -->
             <!-- ============================================================== -->
-
-            <!--inicio Menu da esquerda-->
+            
+            
+             <!--inicio Menu da esquerda-->
             <%@ include file = "MenuEsquerdo.jsp" %>
             <!--fim Menu da esquerda-->
-
+            
+            
             <!-- ============================================================== -->
             <!-- End Left Sidebar -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Page Content -->
             <!-- ============================================================== -->
-           
-
-            
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row bg-title">
@@ -91,14 +118,47 @@
                         <!-- /.col-lg-12 -->
                     </div>
                     
+                                     
                     
                     <!--inicio Conteúdo-->
-                   
+
+                    
+                    <div class="wrapper fadeInDown">
+                        <div id="formContent">
+                            <!-- Tabs Titles -->
+
+                            <!-- Icon -->
+                            <div class="fadeIn first">
+                                <i class="fa fa-laptop fa-fw" aria-hidden="true"></i>
+                            </div>
+                            
+                            <div>
+                                <labe><h1>Criar uma conta</h1> <h6>ou fazer <a href="login.jsp"> login</a></h6></label>
+                            </div>
+
+                            <!-- Login Form -->
+                            <form method="POST" id="form1" name="form1">
+                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
+                                <input type="text" id="email" class="fadeIn second" name="email" placeholder="E-mail">
+                                <input type="text" id="myInput" class="fadeIn third" minlength="8" maxlength="12" name="senha" placeholder="Senha">
+                                <input type="text" id="myInput" class="fadeIn third"minlength="8" maxlength="12" name="rep_senha" placeholder="Confirmar Senha">
+
+                                <input type="submit" class="fadeIn fourth" onclick="return funcSenha()" value="Cadastrar">
+                            </form>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                
+                                 
                     
                     <!--fim Conteúdo-->
 
-                </div>
-                <!-- /.container-fluid -->
+                    
+                
+                               <!-- /.container-fluid -->
                 <footer class="footer text-center"> 2019 &copy; Sys-Vendas </footer>
             </div>
             <!-- ============================================================== -->
