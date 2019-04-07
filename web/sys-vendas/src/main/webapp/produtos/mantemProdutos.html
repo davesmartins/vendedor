@@ -38,7 +38,6 @@
     <![endif]-->
 
 
-
 </head>
 
 <body class="fix-header">
@@ -172,58 +171,42 @@
         <!--inicio Conteúdo-->
 
 
-        <!-- Tabs Titles -->
 
-        <!-- Icon -->
-        <div class="fadeIn first">
-          <i class="fa fa-laptop fa-fw" aria-hidden="true"></i>
+        <div class="wrapper fadeInDown">
+          <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+              <i class="fa fa-lock fa-fw" aria-hidden="true"></i>
+            </div>
+
+            <div>
+              <label><h1>Novo produto</h1></label>
+            </div>
+
+            <!-- Login Form -->
+            <form action="/prod/produtos" method="POST">
+              <input type="text" id="nome" class="fadeIn" name="nome" placeholder="Nome" value="${professor.getNome()}">
+              <input type="text" id="valor" class="fadeIn" name="valor" placeholder="Valor" value="${professor.getValor()}">
+              <input type="text" id="descricao" class="fadeIn" name="descricao" placeholder="Descricao" value="${professor.getDescricao()}">
+              <input type="text" id="desconto" class="fadeIn" name="desconto" placeholder="Desconto" value="${professor.getDesconto()}">
+              <input type="text" id="qtdEstoque" class="fadeIn" name="qtdEstoque" placeholder="qtdEstoque" value="${professor.getQtdEstoque()}">
+              <select name="categoria" class="custom-select mr-sm-2">
+                <c:forEach items="${categorias}" var="cat">
+                  <option value="${cat.getCodigo()}"
+                          <c:if test="${produto.getCategoria() == cat.getCodigo()}">selected </c:if>>${cat.getCodigo()}</option>
+                </c:forEach>
+              </select>
+
+              <input type="submit" class="fadeIn" value="Entrar">
+            </form>
+
+          </div>
         </div>
 
-        <div>
-          <labe>
-            <h1>Produtos</h1></label>
-        </div>
 
-        <!-- Login Form -->
-        <a href="cadastroProduto.html">
-          <input type="button" class="fadeIn fourth" value="Novo Produto" />
-        </a>
-
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Nome</th>
-              <th scope="col">Valor</th>
-              <th scope="col">Descrição</th>
-              <th scope="col">Quantidade em estoque</th>
-              <th scope="col">Categoria</th>
-              <th scope="col">Operações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <c:forEach items="${produtos}" var="p">
-              <tr>
-                <th scope="row">${p.getNome()}</th>
-                <td>${p.getValor()}</td>
-                <td>${p.getDescricao()}</td>
-                <td>${p.getQtdEstoque()}</td>
-                <td>${p.getCategoria()}</td>
-                <td>
-                  <a href="/edit/{p.getCodigo()}">
-                    <i class="fa fa-edit fa-fw" aria-hidden="true"></i>
-                  </a>
-                  <a href="/delete/{p.getCodigo()}">
-                    <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-                  </a>
-                </td>
-              </tr>
-            </c:forEach>
-
-          </tbody>
-        </table>
       </div>
-
-
 
       <!--fim Conteúdo-->
 
