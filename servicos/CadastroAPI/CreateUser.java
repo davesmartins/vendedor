@@ -1,45 +1,65 @@
-public ValidaLogin () {
+package services;
 
-if(jTextField1.getText().equals("") || jPasswordField1.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Login ou Senha inválido.", "Ok", JOptionPane.ERROR_MESSAGE);
-        }else{
-            Connection con = null;
+import com.mysql.jdbc.Connection;
+import servicos.BDVendedorUsuario;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import model.Usuario;
+
+public class CreateUser {
+
+    public static Object gravar(Object usuario) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        Long id;
+        if (usuario.senha.replaceAll("QWERTYUIOPASDFGHJKLZXCVBNM", "qwertyuiopasdfghjklzxcvbnm", "!@#$%&*", "1234567890")) {
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://db.mysql.davesmartins.com.br/vendedor_usuario"," user_v5"," v1v2v3v4v5");
-                Statement stm = con.createStatement();
-                String SQL = "Select * from vendedor_usuario where login = '"+ jTextField1.getText()+"';";
-                ResultSet rs = stm.executeQuery(SQL);
-                while(rs.next()) {
-                    String loginn = rs.getString("login");
-                    String senhaa = rs.getString("senha");
-                    String nomee = rs.getString("nome");
-                    String emaill = rs.getString("email");
-                    if(jTextField1.getText().equals(loginn) && jPasswordField1.getText().equals(senhaa)){
-                        JOptionPane.showMessageDialog(null,"Seja bem vindo: " + nomee,"Ok",JOptionPane.INFORMATION_MESSAGE);
-                        jLabel2.setText(nomee);
-                        jLabel6.setText(emaill);
-                    }else{
-                        JOptionPane.showMessageDialog(null,"Login ou Senha inválidos.","Ok",JOptionPane.ERROR_MESSAGE);
-                        jPasswordField1.setText("");
-                    }
-                }
-            }catch(SQLException e){
-                e.printStackTrace(); 
-                JOptionPane.showMessageDialog(null,"Erro na conexão, com o banco de dados!","Ok",JOptionPane.WARNING_MESSAGE);
-            }catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }finally {
-                try{
-                    con.close();
-                }catch(SQLException onConClose){
-                    //System.out.println("Houve erro no fechamento da conexão");
-                    JOptionPane.showMessageDialog(null,"Erro na conexão, com o banco de dados!","Ok",JOptionPane.WARNING_MESSAGE);
-                    onConClose.printStackTrace();
-                }
-            } 
+                conexao = BDVendedorUsuario.getConexao();
+                comando = conexao.prepareStatement("INSERT INTO usuario (nome, email, login, senha) values (?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+                comando.setString(1, usuario.nome);
+                comando.setString(2, usuario.email);
+                comando.setString(3, usuario.login);
+                comando.setString(4, usuario.senha);
+                comando.execute();
+                id = BDVendedorUsuario.returnId(comando);
+            } catch (SQLException e) {
+                throw e;
+            }
+            return ler(id);
         }
+        return false;
+    }
+    public Object ler(Long id) {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BDVendedorUsuario.getConexao();
+            String sql = "SELECT * FROM usuario WHERE usuario.id = ? ";
+            comando = conexao.prepareStatement(sql);
+            comando.setLong(1, id);
+            ResultSet rs = comando.executeQuery();
+            rs.first();
+            Usuario usuario = getFromResultSet(rs);
+            BDVendedorUsuario.fecharConexao(conexao, comando);
+            return usuario;
+        } catch (SQLException e) {
+            BDVendedorUsuario.fecharConexao(conexao, comando);
+        }
+        return null;
 
-        jTextField1.setText("");
-        jPasswordField1.setText("");
+    }
+    
+        private static Usuario getFromResultSet(ResultSet rs) throws SQLException {
+            return new Object(rs.getString("nome"),
+                rs.getString("email"),
+                rs.getString("login"),
+                rs.getString("senha"),
+
+     }
+
 }
+        
+    
+
