@@ -75,6 +75,12 @@
                             Cadastre-se</a>
                     </li>
 
+                    <li>
+                        <a href="produtos/produtos.jsp" class="waves-effect">
+                            <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                            Produtos</a>
+                    </li>
+
                 </ul>
                 <div class="center p-20">
                 </div>
