@@ -59,40 +59,9 @@
     <!-- ============================================================== -->
 
 
-    <!--inicio Header
-            <%@ include file = "header.jsp" %>
-            fim Header-->
-
-    <nav class="navbar navbar-default navbar-static-top m-b-0">
-      <div class="navbar-header">
-        <div class="top-left-part">
-          <!-- Logo -->
-          <a class="logo" href="index.html">
-            <!-- Logo icon image, you can use font-icon also --><b>
-              <!--This is dark logo icon--><img src="../plugins/images/admin-logo.png" alt="home" class="dark-logo" />
-              <!--This is light logo icon--><img src="../plugins/images/admin-logo-dark.png" alt="home"
-                class="light-logo" />
-            </b>
-            <!-- Logo text image you can use text also --><span class="hidden-xs">
-              <!--This is dark logo text--><img src="../plugins/images/admin-text.png" alt="home" class="dark-logo" />
-              <!--This is light logo text--><img src="../plugins/images/admin-text-dark.png" alt="home"
-                class="light-logo" />
-            </span> </a>
-        </div>
-        <!-- /Logo -->
-        <ul class="nav navbar-top-links navbar-right pull-right">
-
-          <li>
-            <a class="profile-pic" href="#"> <img src="../plugins/images/users/varun.jpg" alt="user-img" width="36"
-                class="img-circle"><b class="hidden-xs">Steave</b></a>
-          </li>
-        </ul>
-      </div>
-      <!-- /.navbar-header -->
-      <!-- /.navbar-top-links -->
-      <!-- /.navbar-static-side -->
-    </nav>
-
+    <!--inicio Header-->
+    <%@ include file = "header.jsp" %>
+    <!--fim Header-->-->
 
 
     <!-- End Top Navigation -->
@@ -101,51 +70,11 @@
     <!-- ============================================================== -->
 
 
-    <!--inicio Menu da esquerda
-            <%@ include file = "MenuEsquerdo.jsp" %>
-            fim Menu da esquerda-->
+    <<!--inicio Menu da esquerda-->
+    <%@ include file = "MenuEsquerdo.jsp" %>
+    <!--fim Menu da esquerda-->
 
 
-    <div class="navbar-default sidebar" role="navigation">
-      <div class="sidebar-nav slimscrollsidebar">
-        <div class="sidebar-head">
-          <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span
-              class="hide-menu">Navigation</span></h3>
-        </div>
-        <ul class="nav" id="side-menu">
-          <li style="padding: 70px 0 0;">
-            <a href="../index.jsp" class="waves-effect">
-              <i class="fa fa-clock-o fa-fw" aria-hidden="true">
-              </i>Principal
-            </a>
-          </li>
-          <li>
-            <a href="../login.jsp" class="waves-effect">
-              <i class="fa fa-user fa-fw" aria-hidden="true"></i>
-              Login</a>
-          </li>
-          <li>
-            <a href="../senha.jsp" class="waves-effect">
-              <i class="fa fa-plug fa-fw" aria-hidden="true"></i>
-              Recuperar Senha</a>
-          </li>
-          <li>
-            <a href="../email.jsp" class="waves-effect">
-              <i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i>
-              Recuperar Email</a>
-          </li>
-          <li>
-            <a href="../cadastro.jsp" class="waves-effect">
-              <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-              Cadastre-se</a>
-          </li>
-
-        </ul>
-        <div class="center p-20">
-        </div>
-      </div>
-
-    </div>
 
     <!-- ============================================================== -->
     <!-- End Left Sidebar -->
@@ -180,8 +109,7 @@
         </div>
 
         <div>
-          <labe>
-            <h1>Produtos</h1></label>
+          <label><h1>Produtos</h1></label>
         </div>
 
         <!-- Login Form -->
