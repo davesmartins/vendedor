@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +59,7 @@
 
 
     <!--inicio Header-->
-    <%@ include file = "header.jsp" %>
+    <%@ include file = "../header.jsp" %>
     <!--fim Header-->-->
 
 
@@ -71,7 +70,7 @@
 
 
     <<!--inicio Menu da esquerda-->
-    <%@ include file = "MenuEsquerdo.jsp" %>
+    <%@ include file = "../MenuEsquerdo.jsp" %>
     <!--fim Menu da esquerda-->
 
 
@@ -128,25 +127,7 @@
               <th scope="col">Operações</th>
             </tr>
           </thead>
-          <tbody>
-            <c:forEach items="${produtos}" var="p">
-              <tr>
-                <th scope="row">${p.getNome()}</th>
-                <td>${p.getValor()}</td>
-                <td>${p.getDescricao()}</td>
-                <td>${p.getQtdEstoque()}</td>
-                <td>${p.getCategoria()}</td>
-                <td>
-                  <a href="/edit/{p.getCodigo()}">
-                    <i class="fa fa-edit fa-fw" aria-hidden="true"></i>
-                  </a>
-                  <a href="/delete/{p.getCodigo()}">
-                    <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-                  </a>
-                </td>
-              </tr>
-            </c:forEach>
-
+          <tbody id="produtosLista">
           </tbody>
         </table>
       </div>
@@ -191,6 +172,20 @@
   <script src="../js/custom.min.js"></script>
   <script src="../js/dashboard1.js"></script>
   <script src="../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+
+  <script>
+    function populate() {
+      console.log(${produtos});
+      var produtosVar = ${produtos};
+      produtosVar.forEach(x => {
+        document.getElementById("produtosLista").innerHTML += "<tr><th scope='row'>" + x.nome + "</th>\n<td>" + x.valor + "</td><td>" + x.descricao + "</td>\n<td>" + x.qtdEstoque + "</td>\n<td>" + x.categoria + "</td>\n<td>\n<a href=\"/edit/" + x.codigo + "\">\n<i class=\"fa fa-edit fa-fw\" aria-hidden=\"true\"></i>\n</a>\n<a href=\"/delete/\" + x.codigo + \"\">\n<i class=\"fa fa-trash fa-fw\" aria-hidden=\"true\"></i>\n</a>\n</td>\n</tr>"
+      })
+    }
+
+    onload(this.populate());
+
+
+  </script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 package com.codefootmen.softwareengineer.api.model;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "produtos")
 public class Produtos {
 
+    public Produtos(){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

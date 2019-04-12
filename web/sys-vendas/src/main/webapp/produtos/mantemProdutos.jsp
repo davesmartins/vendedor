@@ -61,7 +61,7 @@
 
 
     <!--&lt;!&ndash;inicio Header-->
-    <%@ include file = "header.jsp" %>
+    <%@ include file = "../header.jsp" %>
     <!--fim Header&ndash;&gt;-->
 
 
@@ -72,7 +72,7 @@
 
 
     <!--&lt;!&ndash;inicio Menu da esquerda-->
-    <%@ include file = "MenuEsquerdo.jsp" %>
+    <%@ include file = "../MenuEsquerdo.jsp" %>
     <!--fim Menu da esquerda&ndash;&gt;-->
 
 
@@ -102,6 +102,8 @@
 
         <!--inicio Conteúdo-->
 
+
+
 
 
         <div class="wrapper fadeInDown">
@@ -123,13 +125,14 @@
               <input type="text" id="valor" class="fadeIn" name="valor" placeholder="Valor" value="${professor.getValor()}">
               <input type="text" id="descricao" class="fadeIn" name="descricao" placeholder="Descricao" value="${professor.getDescricao()}">
               <input type="text" id="desconto" class="fadeIn" name="desconto" placeholder="Desconto" value="${professor.getDesconto()}">
-              <input type="text" id="qtdEstoque" class="fadeIn" name="qtdEstoque" placeholder="qtdEstoque" value="${professor.getQtdEstoque()}">
-              <select name="categoria" class="custom-select mr-sm-2">
-                <c:forEach items="${categorias}" var="cat">
-                  <option value="${cat.getCodigo()}"
-                          <c:if test="${produto.getCategoria() == cat.getCodigo()}">selected </c:if>>${cat.getCodigo()}</option>
-                </c:forEach>
-              </select>
+              <%--<input type="text" id="qtdEstoque" class="fadeIn" name="qtdEstoque" placeholder="qtdEstoque" value="${professor.getQtdEstoque()}">--%>
+              <%--<select name="categoria" class="custom-select mr-sm-2">--%>
+                <%--<c:forEach items="${categorias}" var="cat">--%>
+                  <%--<option value="${cat.getCodigo()}"--%>
+                          <%--<c:if test="${produto.getCategoria() == cat.getCodigo()}">selected </c:if>>${cat.getCodigo()}</option>--%>
+                <%--</c:forEach>--%>
+              <%--</select>--%>
+              <input type="hidden" value="null" name="categoria" id="categoria" />
 
               <input type="submit" class="fadeIn" value="Entrar">
             </form>
@@ -178,6 +181,12 @@
   <script src="../js/custom.min.js"></script>
   <script src="../js/dashboard1.js"></script>
   <script src="../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+  <script>
+    function validaForm() {
+
+
+    }
+  </script>
 </body>
 
 </html>

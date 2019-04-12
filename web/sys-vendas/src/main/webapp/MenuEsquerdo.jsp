@@ -76,7 +76,7 @@
                     </li>
 
                     <li>
-                        <a href="produtos/produtos.jsp" class="waves-effect">
+                        <a href="produtos" class="waves-effect">
                             <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
                             Produtos</a>
                     </li>
