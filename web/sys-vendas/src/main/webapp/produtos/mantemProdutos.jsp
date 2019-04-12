@@ -120,12 +120,12 @@
             </div>
 
             <!-- Login Form -->
-            <form action="/prod/produtos" method="POST">
+            <form action="../produtos" method="POST">
               <input type="text" id="nome" class="fadeIn" name="nome" placeholder="Nome" value="${professor.getNome()}">
               <input type="text" id="valor" class="fadeIn" name="valor" placeholder="Valor" value="${professor.getValor()}">
               <input type="text" id="descricao" class="fadeIn" name="descricao" placeholder="Descricao" value="${professor.getDescricao()}">
               <input type="text" id="desconto" class="fadeIn" name="desconto" placeholder="Desconto" value="${professor.getDesconto()}">
-              <%--<input type="text" id="qtdEstoque" class="fadeIn" name="qtdEstoque" placeholder="qtdEstoque" value="${professor.getQtdEstoque()}">--%>
+              <input type="text" id="qtdEstoque" class="fadeIn" name="qtdEstoque" placeholder="qtdEstoque" value="${professor.getQtdEstoque()}">
               <%--<select name="categoria" class="custom-select mr-sm-2">--%>
                 <%--<c:forEach items="${categorias}" var="cat">--%>
                   <%--<option value="${cat.getCodigo()}"--%>

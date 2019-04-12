@@ -112,7 +112,7 @@
         </div>
 
         <!-- Login Form -->
-        <a href="cadastroProduto.html">
+        <a href="produtos/mantemProdutos.jsp">
           <input type="button" class="fadeIn fourth" value="Novo Produto" />
         </a>
 

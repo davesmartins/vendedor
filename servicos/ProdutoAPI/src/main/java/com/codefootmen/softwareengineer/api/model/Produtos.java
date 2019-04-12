@@ -13,6 +13,7 @@ public class Produtos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @PrimaryKeyJoinColumn(name="codigo", referencedColumnName="codigo")
     private Integer codigo;
 
     @NotNull
