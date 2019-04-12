@@ -101,7 +101,7 @@
                             </div>
                             
                              <div>
-                                <labe><h1>Acessar conta</h1> <h6>ou fazer <a href="cadastro.jsp"> cadastro</a></h6></label>
+                                <label><h1>Acessar conta</h1> <h6>ou fazer <a href="cadastro.jsp"> cadastro</a></h6></label>
                             </div>
 
                             <!-- Login Form -->

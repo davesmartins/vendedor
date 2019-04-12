@@ -47,8 +47,8 @@ public class ProdutosResource {
 
     @DeleteMapping("/{codigo}")
     public ResponseEntity<String> apagarPeloCodigo(@PathVariable Long codigo) {
-        Optional<Produtos> categoriaDeletada = produtosRepository.findById(codigo);
-        if (!categoriaDeletada.isPresent()) {
+        Optional<Produtos> produtoDeletado = produtosRepository.findById(codigo);
+        if (!produtoDeletado.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         produtosRepository.deleteById(codigo);
