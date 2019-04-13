@@ -26,7 +26,25 @@ public class ProdutoController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        URL url = new URL("http://localhost:8090/prod/produtos");
+
+        String par = req.getParameter("op");
+        URL url;
+
+        if("del".equals(par)){
+            String code = req.getParameter("codigo");
+            url = new URL("http://localhost:8090/prod/produtos/" + code);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("DELETE");
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            in.read();
+            in.close();
+        }
+
+
+        url = new URL("http://localhost:8090/prod/produtos");
+
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         BufferedReader in = new BufferedReader(
@@ -45,6 +63,7 @@ public class ProdutoController extends HttpServlet {
 
         req.setAttribute("produtos", dados);
         req.getRequestDispatcher("/produtos/produtos.jsp").forward(req, resp);
+
     }
 
     @Override

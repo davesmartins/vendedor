@@ -178,7 +178,7 @@
       console.log(${produtos});
       var produtosVar = ${produtos};
       produtosVar.forEach(x => {
-        document.getElementById("produtosLista").innerHTML += "<tr><th scope='row'>" + x.nome + "</th>\n<td>" + x.valor + "</td><td>" + x.descricao + "</td>\n<td>" + x.qtdEstoque + "</td>\n<td>" + x.categoria + "</td>\n<td>\n<a href=\"/edit/" + x.codigo + "\">\n<i class=\"fa fa-edit fa-fw\" aria-hidden=\"true\"></i>\n</a>\n<a href=\"/delete/\" + x.codigo + \"\">\n<i class=\"fa fa-trash fa-fw\" aria-hidden=\"true\"></i>\n</a>\n</td>\n</tr>"
+        document.getElementById("produtosLista").innerHTML += "<tr><th scope='row'>" + x.nome + "</th>\n<td>" + x.valor + "</td><td>" + x.descricao + "</td>\n<td>" + x.qtdEstoque + "</td>\n<td>" + x.categoria + "</td>\n<td>\n<a href=\"/edit/" + x.codigo + "\">\n<i class=\"fa fa-edit fa-fw\" aria-hidden=\"true\"></i>\n</a>\n<a href=\"./produtos?op=del&codigo=" + x.codigo + "\"\">\n<i class=\"fa fa-trash fa-fw\" aria-hidden=\"true\"></i>\n</a>\n</td>\n</tr>"
       })
     }
 

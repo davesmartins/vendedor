@@ -31,7 +31,7 @@ public class ProdutosResource {
     }
 
     @GetMapping("/{codigo}")
-    public ResponseEntity<Produtos> buscarPeloCodigo(@PathVariable Long codigo) {
+    public ResponseEntity<Produtos> buscarPeloCodigo(@PathVariable Integer codigo) {
         Optional<Produtos> produto = produtosRepository.findById(codigo);
         if (!produto.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -46,7 +46,7 @@ public class ProdutosResource {
     }
 
     @DeleteMapping("/{codigo}")
-    public ResponseEntity<String> apagarPeloCodigo(@PathVariable Long codigo) {
+    public ResponseEntity<String> apagarPeloCodigo(@PathVariable Integer codigo) {
         Optional<Produtos> produtoDeletado = produtosRepository.findById(codigo);
         if (!produtoDeletado.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
